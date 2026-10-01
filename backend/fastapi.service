@@ -1,0 +1,14 @@
+[Unit]
+Description=FastAPI Video Platform Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/First-term-exam-Practical/backend
+ExecStart=/home/ubuntu/First-term-exam-Practical/backend/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+EnvironmentFile=/home/ubuntu/First-term-exam-Practical/backend/.env
+
+[Install]
+WantedBy=multi-user.target
